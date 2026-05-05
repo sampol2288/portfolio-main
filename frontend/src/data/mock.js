@@ -86,19 +86,39 @@ export const portfolioData = {
   ]
 };
 
-// Mock function to simulate contact form submission
+// Contact form submission with backend API
 export const submitContactForm = async (formData) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("Mock form submission:", formData);
-      // Store in browser localStorage for demo purposes
-      const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-      submissions.push({
-        ...formData,
-        timestamp: new Date().toISOString()
-      });
-      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-      resolve({ success: true, message: "Message sent successfully!" });
-    }, 1000);
-  });
+  try {
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    const response = await fetch(`${apiUrl}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return { 
+        success: false, 
+        message: 'Failed to send message',
+        errors: data.errors 
+      };
+    }
+
+    return { 
+      success: true, 
+      message: "Message sent successfully!",
+      data: data.data 
+    };
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    return { 
+      success: false, 
+      message: "Network error. Please try again later.",
+      error: error.message 
+    };
+  }
 };

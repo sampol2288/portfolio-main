@@ -1,9 +1,11 @@
 import React from 'react';
 import { ArrowRight, Github, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Hero = () => {
+  const { data: portfolioData } = usePortfolio();
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {

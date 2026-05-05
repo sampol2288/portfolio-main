@@ -3,9 +3,11 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Projects = () => {
+  const { data: portfolioData } = usePortfolio();
+
   return (
     <section id="projects" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

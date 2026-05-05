@@ -1,9 +1,11 @@
 import React from 'react';
 import { Code, Layout, GitBranch, Layers, Sparkles, Boxes } from 'lucide-react';
 import { Card } from './ui/card';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Skills = () => {
+  const { data: portfolioData } = usePortfolio();
+
   const skillIcons = {
     'HTML5': <Code className="w-6 h-6" />,
     'CSS3': <Layout className="w-6 h-6" />,

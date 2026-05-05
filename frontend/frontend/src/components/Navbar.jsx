@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github } from 'lucide-react';
 import { Button } from './ui/button';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Navbar = () => {
+  const { data: portfolioData } = usePortfolio();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -58,7 +61,7 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="https://github.com/sampol2288"
+              href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,7 +96,7 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="https://github.com/sampol2288"
+              href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
               className="block"

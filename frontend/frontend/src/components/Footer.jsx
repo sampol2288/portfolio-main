@@ -1,9 +1,11 @@
 import React from 'react';
 import { Github, Heart, Download } from 'lucide-react';
 import { Button } from './ui/button';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Footer = () => {
+  const { data: portfolioData } = usePortfolio();
+
   const currentYear = new Date().getFullYear();
 
   return (

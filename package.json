@@ -1,9 +1,11 @@
 {
-  "dependencies": {
-    "@craco/craco": "^7.1.0"
-  },
+  "name": "portfolio-monorepo",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "craco start",
-    "build": "craco build"
+    "install-all": "npm install --prefix backend && cd frontend/frontend && npm install",
+    "build": "cd frontend/frontend && npm install && npm run build",
+    "start": "NODE_ENV=production node backend/src/server.js",
+    "render-build": "npm install --prefix backend && cd frontend/frontend && npm install && npm run build"
   }
 }
