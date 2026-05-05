@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: smit-polra-portfolio
+    env: node
+    buildCommand: npm run render-build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGINS
+        value: https://smit-polra-portfolio.onrender.com
+      - key: DATA_DIR
+        value: /opt/render/project/src/backend/data
+    disk:
+      name: portfolio-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
