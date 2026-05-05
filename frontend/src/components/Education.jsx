@@ -2,9 +2,11 @@ import React from 'react';
 import { GraduationCap, Calendar, CheckCircle, Clock } from 'lucide-react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Education = () => {
+  const { data: portfolioData } = usePortfolio();
+
   return (
     <section id="education" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

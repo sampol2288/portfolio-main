@@ -9,21 +9,26 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Education />
-      <Contact />
-      <Footer />
-      <Toaster />
-    </div>
+    <PortfolioProvider>
+      <div className="App">
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
+        <Footer />
+        <Toaster />
+      </div>
+    </PortfolioProvider>
   );
 }
+
+
 
 export default App;

@@ -42,13 +42,14 @@ app.use('/api', routes);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
-  const buildPath = path.resolve(__dirname, '../../frontend/frontend/build');
+  const buildPath = path.resolve(__dirname, '../../frontend/build');
   app.use(express.static(buildPath));
   
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(buildPath, 'index.html'));
   });
 }
+
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {

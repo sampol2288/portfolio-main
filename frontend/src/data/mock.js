@@ -1,6 +1,7 @@
-// Mock data for Smit Polra Portfolio
+const API_BASE_URL = process.env.NODE_ENV === 'production' ? '/api' : (process.env.REACT_APP_API_URL || 'http://localhost:5000/api');
 
-export const portfolioData = {
+// Initial data structure (will be populated from API)
+export let portfolioData = {
   personal: {
     name: "Smit Polra",
     title: "AI + Front End Developer",
@@ -10,12 +11,10 @@ export const portfolioData = {
     github: "https://github.com/sampol2288",
     resumeUrl: "/resume.pdf"
   },
-  
   about: {
     summary: "Motivated Front End Developer with a strong foundation in HTML, CSS, JavaScript, and React.js. Currently pursuing BCA while specializing in building responsive, user-friendly web interfaces with modern frameworks. Passionate about integrating AI capabilities into web applications to create intelligent, interactive user experiences. Focused on clean code, component-based architecture, and delivering pixel-perfect designs that enhance user engagement.",
     highlight: "I'm deeply interested in React and AI-based interfaces, constantly exploring ways to blend cutting-edge AI technology with intuitive frontend design."
   },
-  
   skills: {
     frontend: [
       { name: "HTML5", level: 90 },
@@ -33,64 +32,29 @@ export const portfolioData = {
       "Reusable Components"
     ]
   },
-  
-  projects: [
-    {
-      id: 1,
-      name: "Satshree Steel",
-      description: "A professional business website for a steel manufacturing company. Built with modern frontend technologies featuring responsive design, smooth animations, and clean user interface.",
-      tech: ["React.js", "CSS3", "Responsive Design"],
-      liveUrl: "https://satshreesteel.in/",
-      featured: true
-    },
-    {
-      id: 2,
-      name: "SAM Portfolio",
-      description: "A creative portfolio website showcasing modern web development techniques with interactive elements and smooth user experience.",
-      tech: ["React.js", "JavaScript", "CSS3"],
-      liveUrl: "https://sam-three-phi.vercel.app/",
-      featured: true
-    },
-    {
-      id: 3,
-      name: "Admin Dashboard",
-      description: "A comprehensive admin panel interface with data visualization, user management, and responsive layout for efficient content management.",
-      tech: ["React.js", "Bootstrap", "JavaScript"],
-      liveUrl: "https://admin-puce-one-52.vercel.app/",
-      featured: true
-    }
-  ],
-  
-  education: [
-    {
-      id: 1,
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Bhagwan Mahavir University",
-      period: "2023 – 2026",
-      status: "Pursuing"
-    },
-    {
-      id: 2,
-      degree: "Computer Operator And Programming Assistant (GCVT)",
-      institution: "Industrial Training Institute (ITI)",
-      period: "2020 – 2023",
-      status: "Completed"
-    },
-    {
-      id: 3,
-      degree: "Information Communication Technology System Maintenance (NSQF)",
-      institution: "Industrial Training Institute (ITI)",
-      period: "2021 – 2022",
-      status: "Completed"
-    }
-  ]
+  projects: [],
+  education: []
 };
 
-// Contact form submission with backend API
+// Function to fetch portfolio data from API
+export const fetchPortfolioData = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/portfolio`);
+    const result = await response.json();
+    if (result.success) {
+      portfolioData = { ...portfolioData, ...result.data };
+      return result.data;
+    }
+  } catch (error) {
+    console.error("Error fetching portfolio data:", error);
+  }
+  return portfolioData;
+};
+
+// Function to submit contact form to API
 export const submitContactForm = async (formData) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-    const response = await fetch(`${apiUrl}/api/contact`, {
+    const response = await fetch(`${API_BASE_URL}/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -98,27 +62,14 @@ export const submitContactForm = async (formData) => {
       body: JSON.stringify(formData),
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      return { 
-        success: false, 
-        message: 'Failed to send message',
-        errors: data.errors 
-      };
+    const result = await response.json();
+    if (response.ok) {
+      return { success: true, data: result.data };
+    } else {
+      return { success: false, errors: result.errors || [result.error] };
     }
-
-    return { 
-      success: true, 
-      message: "Message sent successfully!",
-      data: data.data 
-    };
   } catch (error) {
-    console.error('Error submitting form:', error);
-    return { 
-      success: false, 
-      message: "Network error. Please try again later.",
-      error: error.message 
-    };
+    console.error("Error submitting contact form:", error);
+    return { success: false, message: "Server connection failed" };
   }
-};
+};

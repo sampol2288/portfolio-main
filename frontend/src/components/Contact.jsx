@@ -4,11 +4,14 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { portfolioData, submitContactForm } from '../data/mock';
+import { submitContactForm } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Contact = () => {
+  const { data: portfolioData } = usePortfolio();
   const { toast } = useToast();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',

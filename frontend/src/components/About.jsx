@@ -1,9 +1,11 @@
 import React from 'react';
 import { Code2, Sparkles } from 'lucide-react';
 import { Card } from './ui/card';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const About = () => {
+  const { data: portfolioData } = usePortfolio();
+
   return (
     <section id="about" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
