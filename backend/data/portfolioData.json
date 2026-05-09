@@ -14,11 +14,26 @@
   },
   "skills": {
     "frontend": [
-      { "name": "HTML5", "level": 90 },
-      { "name": "CSS3", "level": 85 },
-      { "name": "JavaScript", "level": 85 },
-      { "name": "React.js", "level": 80 },
-      { "name": "Bootstrap", "level": 85 }
+      {
+        "name": "HTML5",
+        "level": 90
+      },
+      {
+        "name": "CSS3",
+        "level": 85
+      },
+      {
+        "name": "JavaScript",
+        "level": 85
+      },
+      {
+        "name": "React.js",
+        "level": 80
+      },
+      {
+        "name": "Bootstrap",
+        "level": 85
+      }
     ],
     "practices": [
       "Component-based Architecture",
@@ -34,15 +49,23 @@
       "id": 1,
       "name": "Satshree Steel",
       "description": "A professional business website for a steel manufacturing company. Built with modern frontend technologies featuring responsive design, smooth animations, and clean user interface.",
-      "tech": ["React.js", "CSS3", "Responsive Design"],
+      "tech": [
+        "React.js",
+        "CSS3",
+        "Responsive Design"
+      ],
       "liveUrl": "https://satshreesteel.in/",
       "featured": true
     },
     {
       "id": 2,
-      "name": "SAM Portfolio",
-      "description": "A creative portfolio website showcasing modern web development techniques with interactive elements and smooth user experience.",
-      "tech": ["React.js", "JavaScript", "CSS3"],
+      "name": "SAM Made With Emergentolio",
+      "description": "A creative Made With Emergentolio website showcasing modern web development techniques with interactive elements and smooth user experience.",
+      "tech": [
+        "React.js",
+        "JavaScript",
+        "CSS3"
+      ],
       "liveUrl": "https://sam-three-phi.vercel.app/",
       "featured": true
     },
@@ -50,7 +73,11 @@
       "id": 3,
       "name": "Admin Dashboard",
       "description": "A comprehensive admin panel interface with data visualization, user management, and responsive layout for efficient content management.",
-      "tech": ["React.js", "Bootstrap", "JavaScript"],
+      "tech": [
+        "React.js",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "liveUrl": "https://admin-puce-one-52.vercel.app/",
       "featured": true
     }

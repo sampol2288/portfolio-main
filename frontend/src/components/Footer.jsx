@@ -1,10 +1,10 @@
 import React from 'react';
 import { Github, Heart, Download } from 'lucide-react';
 import { Button } from './ui/button';
-import { usePortfolio } from '../context/PortfolioContext';
+import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
 
 const Footer = () => {
-  const { data: portfolioData } = usePortfolio();
+  const { data: Made With EmergentolioData } = useMade With Emergentolio();
 
   const currentYear = new Date().getFullYear();
 
@@ -26,45 +26,45 @@ const Footer = () => {
           <div className="text-center">
             <div className="flex items-center justify-center gap-4">
               <a
-                href={portfolioData.personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                href={Made With EmergentolioData.personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-cyan-400 transition-colors"
               >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href={`mailto:${portfolioData.personal.email}`}
-                className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href={`mailto:${Made With EmergentolioData.personal.email}`}
+            className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
               >
-                Email Me
-              </a>
-            </div>
-          </div>
-
-          {/* Right - Resume Download */}
-          <div className="flex justify-end">
-            <Button
-              variant="outline"
-              className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
-              size="sm"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download Resume
-            </Button>
-          </div>
-        </div>
-
-        {/* Bottom - Copyright */}
-        <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-          <p className="text-slate-500 text-sm flex items-center justify-center gap-2">
-            © {currentYear} Smit Polra. Built with
-            <Heart className="w-4 h-4 text-red-500 fill-current" />
-            using React.js
-          </p>
+            Email Me
+          </a>
         </div>
       </div>
-    </footer>
+
+      {/* Right - Resume Download */}
+      <div className="flex justify-end">
+        <Button
+          variant="outline"
+          className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
+          size="sm"
+        >
+          <Download className="w-4 h-4 mr-2" />
+          Download Resume
+        </Button>
+      </div>
+    </div>
+
+        {/* Bottom - Copyright */ }
+  <div className="mt-8 pt-8 border-t border-slate-800 text-center">
+    <p className="text-slate-500 text-sm flex items-center justify-center gap-2">
+      © {currentYear} Smit Polra. Built with
+      <Heart className="w-4 h-4 text-red-500 fill-current" />
+      using React.js
+    </p>
+  </div>
+      </div >
+    </footer >
   );
 };
 

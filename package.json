@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-monorepo",
+  "name": "Made With Emergentolio-monorepo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,5 +9,3 @@
     "render-build": "npm install --prefix backend && cd frontend && npm install && NODE_ENV=production npm run build"
   }
 }
-
-

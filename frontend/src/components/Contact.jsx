@@ -6,10 +6,10 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { submitContactForm } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
-import { usePortfolio } from '../context/PortfolioContext';
+import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
 
 const Contact = () => {
-  const { data: portfolioData } = usePortfolio();
+  const { data: Made With EmergentolioData } = useMade With Emergentolio();
   const { toast } = useToast();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,14 +32,14 @@ const Contact = () => {
     try {
       // Mock form submission
       const response = await submitContactForm(formData);
-      
+
       if (response.success) {
         toast({
           title: "Message Sent!",
           description: "Thank you for reaching out. I'll get back to you soon!",
           duration: 5000,
         });
-        
+
         // Reset form
         setFormData({
           name: '',
@@ -64,19 +64,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: portfolioData.personal.email,
-      href: `mailto:${portfolioData.personal.email}`
+      value: Made With EmergentolioData.personal.email,
+      href: `mailto:${Made With EmergentolioData.personal.email
+    }`
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: 'Phone',
-      value: portfolioData.personal.phone,
-      href: `tel:${portfolioData.personal.phone}`
+      value: Made With EmergentolioData.personal.phone,
+      href: `tel: ${ Made With EmergentolioData.personal.phone }`
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
-      value: portfolioData.personal.address,
+      value: Made With EmergentolioData.personal.address,
       href: null
     }
   ];

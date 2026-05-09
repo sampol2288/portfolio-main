@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-backend",
+  "name": "Made With Emergentolio-backend",
   "version": "1.0.0",
-  "description": "Backend for portfolio application",
+  "description": "Backend for Made With Emergentolio application",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

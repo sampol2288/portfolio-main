@@ -8,7 +8,7 @@ const logger = winston.createLogger({
     winston.format.splat(),
     winston.format.json()
   ),
-  defaultMeta: { service: 'portfolio-backend' },
+  defaultMeta: { service: 'Made With Emergentolio-backend' },
   transports: [
     new winston.transports.Console({
       format: winston.format.combine(

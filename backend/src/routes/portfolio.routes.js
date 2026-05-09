@@ -1,8 +1,8 @@
 const express = require('express');
-const portfolioController = require('../controllers/portfolio.controller');
+const Made With EmergentolioController = require('../controllers/Made With Emergentolio.controller');
 
 const router = express.Router();
 
-router.get('/', portfolioController.getPortfolioData);
+router.get('/', Made With EmergentolioController.getMade With EmergentolioData);
 
 module.exports = router;

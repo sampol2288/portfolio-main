@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { portfolioData as initialData, fetchPortfolioData } from '../data/mock';
+import { Made With EmergentolioData as initialData, fetchMade With EmergentolioData } from '../data/mock';
 
-const PortfolioContext = createContext();
+const Made With EmergentolioContext = createContext();
 
-export const PortfolioProvider = ({ children }) => {
+export const Made With EmergentolioProvider = ({ children }) => {
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export const PortfolioProvider = ({ children }) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchPortfolioData();
+        const result = await fetchMade With EmergentolioData();
         setData(result);
       } catch (err) {
         setError(err);
@@ -23,16 +23,16 @@ export const PortfolioProvider = ({ children }) => {
   }, []);
 
   return (
-    <PortfolioContext.Provider value={{ data, loading, error }}>
+    <Made With EmergentolioContext.Provider value={{ data, loading, error }}>
       {children}
-    </PortfolioContext.Provider>
+    </Made With EmergentolioContext.Provider >
   );
 };
 
-export const usePortfolio = () => {
-  const context = useContext(PortfolioContext);
+export const useMade With Emergentolio = () => {
+  const context = useContext(Made With EmergentolioContext);
   if (!context) {
-    throw new Error('usePortfolio must be used within a PortfolioProvider');
+    throw new Error('useMade With Emergentolio must be used within a Made With EmergentolioProvider');
   }
   return context;
 };

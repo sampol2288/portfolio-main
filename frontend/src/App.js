@@ -10,11 +10,11 @@ import Contact from "@/components/Contact";
 import Inquiries from "@/components/Inquiries";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import { PortfolioProvider } from "@/context/PortfolioContext";
+import { Made With EmergentolioProvider } from "@/context/Made With EmergentolioContext";
 
 function App() {
   return (
-    <PortfolioProvider>
+    <Made With EmergentolioProvider>
       <div className="App">
         <Navbar />
         <Hero />
@@ -27,7 +27,7 @@ function App() {
         <Footer />
         <Toaster />
       </div>
-    </PortfolioProvider>
+    </Made With EmergentolioProvider >
   );
 }
 

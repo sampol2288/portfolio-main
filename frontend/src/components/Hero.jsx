@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowRight, Github, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import { usePortfolio } from '../context/PortfolioContext';
+import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
 
 const Hero = () => {
-  const { data: portfolioData } = usePortfolio();
+  const { data: Made With EmergentolioData } = useMade With Emergentolio();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -34,25 +34,25 @@ const Hero = () => {
         <div className="space-y-8 animate-fadeIn">
           {/* Greeting */}
           <p className="text-cyan-400 text-lg font-medium">Hi, I'm</p>
-          
+
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              {portfolioData.personal.name}
+              {Made With EmergentolioData.personal.name}
             </span>
           </h1>
-          
+
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300">
-            {portfolioData.personal.title}
+            {Made With EmergentolioData.personal.title}
           </h2>
-          
+
           {/* Tagline */}
           <p className="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
             Building responsive, intelligent web interfaces with modern technologies.
             Specializing in React.js and AI-integrated frontend solutions.
           </p>
-          
+
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
@@ -63,7 +63,7 @@ const Hero = () => {
               View Projects
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            
+
             <Button
               onClick={() => scrollToSection('contact')}
               variant="outline"
@@ -73,32 +73,32 @@ const Hero = () => {
               <Mail className="w-5 h-5 mr-2" />
               Contact Me
             </Button>
-            
-            <a
-              href={portfolioData.personal.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
-              >
-                <Github className="w-5 h-5 mr-2" />
-                GitHub
-              </Button>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-cyan-400 rounded-full" />
+            <a
+              href={Made With EmergentolioData.personal.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
+            >
+              <Github className="w-5 h-5 mr-2" />
+              GitHub
+            </Button>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+
+      {/* Scroll Indicator */ }
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
+      <div className="w-1 h-2 bg-cyan-400 rounded-full" />
+    </div>
+  </div>
+    </section >
   );
 };
 
