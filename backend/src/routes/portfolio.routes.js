@@ -1,8 +1,8 @@
 const express = require('express');
-const Made With EmergentolioController = require('../controllers/Made With Emergentolio.controller');
+const olioController = require('../controllers/olio.controller');
 
 const router = express.Router();
 
-router.get('/', Made With EmergentolioController.getMade With EmergentolioData);
+router.get('/', olioController.getolioData);
 
 module.exports = router;

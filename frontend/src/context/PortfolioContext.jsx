@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Made With EmergentolioData as initialData, fetchMade With EmergentolioData } from '../data/mock';
+import { olioData as initialData, fetcholioData } from '../data/mock';
 
-const Made With EmergentolioContext = createContext();
+const olioContext = createContext();
 
-export const Made With EmergentolioProvider = ({ children }) => {
+export const olioProvider = ({ children }) => {
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export const Made With EmergentolioProvider = ({ children }) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchMade With EmergentolioData();
+        const result = await fetcholioData();
         setData(result);
       } catch (err) {
         setError(err);
@@ -23,16 +23,16 @@ export const Made With EmergentolioProvider = ({ children }) => {
   }, []);
 
   return (
-    <Made With EmergentolioContext.Provider value={{ data, loading, error }}>
+    <olioContext.Provider value={{ data, loading, error }}>
       {children}
-    </Made With EmergentolioContext.Provider >
+    </olioContext.Provider >
   );
 };
 
-export const useMade With Emergentolio = () => {
-  const context = useContext(Made With EmergentolioContext);
+export const useolio = () => {
+  const context = useContext(olioContext);
   if (!context) {
-    throw new Error('useMade With Emergentolio must be used within a Made With EmergentolioProvider');
+    throw new Error('useolio must be used within a olioProvider');
   }
   return context;
 };

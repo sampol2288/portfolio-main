@@ -6,10 +6,10 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { submitContactForm } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
-import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
+import { useolio } from '../context/olioContext';
 
 const Contact = () => {
-  const { data: Made With EmergentolioData } = useMade With Emergentolio();
+  const { data: olioData } = useolio();
   const { toast } = useToast();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,20 +64,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: Made With EmergentolioData.personal.email,
-      href: `mailto:${Made With EmergentolioData.personal.email
-    }`
+      value: olioData.personal.email,
+      href: `mailto:${olioData.personal.email
+        }`
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: 'Phone',
-      value: Made With EmergentolioData.personal.phone,
-      href: `tel: ${ Made With EmergentolioData.personal.phone }`
+      value: olioData.personal.phone,
+      href: `tel: ${olioData.personal.phone}`
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
-      value: Made With EmergentolioData.personal.address,
+      value: olioData.personal.address,
       href: null
     }
   ];
@@ -99,7 +99,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-            
+
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
@@ -131,7 +131,7 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="bg-slate-900 border-slate-800 p-8">
               <h3 className="text-2xl font-semibold text-white mb-6">Send a Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -149,7 +149,7 @@ const Contact = () => {
                       className="bg-slate-950 border-slate-700 text-white focus:border-cyan-400 transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-slate-400 mb-2 text-sm">
                       Your Email *

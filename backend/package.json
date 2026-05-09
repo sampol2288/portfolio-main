@@ -1,7 +1,7 @@
 {
-  "name": "Made With Emergentolio-backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Backend for Made With Emergentolio application",
+  "description": "Backend for  application",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: smit-polra-Made With Emergentolio
+    name: smit-polra
     env: node
     buildCommand: npm run render-build
     startCommand: npm start
@@ -10,10 +10,10 @@ services:
       - key: PORT
         value: 10000
       - key: CORS_ORIGINS
-        value: https://smit-polra-Made With Emergentolio.onrender.com
+        value: https://smit-polra.onrender.com
       - key: DATA_DIR
         value: /opt/render/project/src/backend/data
     disk:
-      name: Made With Emergentolio-data
+      name: smit-polra-data
       mountPath: /opt/render/project/src/backend/data
       sizeGB: 1

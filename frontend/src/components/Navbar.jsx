@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github } from 'lucide-react';
 import { Button } from './ui/button';
-import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
+import { useolio } from '../context/olioContext';
 
 const Navbar = () => {
-  const { data: Made With EmergentolioData } = useMade With Emergentolio();
+  const { data: olioData } = useolio();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -60,55 +60,55 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href={Made With EmergentolioData.personal.github}
-            target="_blank"
-            rel="noopener noreferrer"
+              href={olioData.personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            <Button variant="outline" size="sm" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-all">
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
-          </a>
+              <Button variant="outline" size="sm" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-all">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub
+              </Button>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-slate-300 hover:text-cyan-400 transition-colors"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-slate-300 hover:text-cyan-400 transition-colors"
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
-    </div>
 
-      {/* Mobile Menu */ }
-  {
-    isMobileMenuOpen && (
-      <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800">
-        <div className="px-4 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className="block w-full text-left text-slate-300 hover:text-cyan-400 transition-colors py-2"
-            >
-              {link.name}
-            </button>
-          ))}
-          <a
-            href={Made With EmergentolioData.personal.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-            >
-          <Button variant="outline" size="sm" className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900">
-            <Github className="w-4 h-4 mr-2" />
-            GitHub
-          </Button>
-        </a>
-      </div>
-        </div >
-      )}
+      {/* Mobile Menu */}
+      {
+        isMobileMenuOpen && (
+          <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800">
+            <div className="px-4 py-4 space-y-3">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="block w-full text-left text-slate-300 hover:text-cyan-400 transition-colors py-2"
+                >
+                  {link.name}
+                </button>
+              ))}
+              <a
+                href={olioData.personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button variant="outline" size="sm" className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+              </a>
+            </div>
+          </div >
+        )}
     </nav >
   );
 };

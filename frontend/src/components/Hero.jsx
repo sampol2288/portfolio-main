@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowRight, Github, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import { useMade With Emergentolio } from '../context/Made With EmergentolioContext';
+import { useolio } from '../context/olioContext';
 
 const Hero = () => {
-  const { data: Made With EmergentolioData } = useMade With Emergentolio();
+  const { data: olioData } = useolio();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -38,13 +38,13 @@ const Hero = () => {
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              {Made With EmergentolioData.personal.name}
+              {olioData.personal.name}
             </span>
           </h1>
 
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300">
-            {Made With EmergentolioData.personal.title}
+            {olioData.personal.title}
           </h2>
 
           {/* Tagline */}
@@ -75,29 +75,29 @@ const Hero = () => {
             </Button>
 
             <a
-              href={Made With EmergentolioData.personal.github}
-            target="_blank"
-            rel="noopener noreferrer"
+              href={olioData.personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </Button>
-          </a>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-400 transition-all"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                GitHub
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-      {/* Scroll Indicator */ }
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
-      <div className="w-1 h-2 bg-cyan-400 rounded-full" />
-    </div>
-  </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-cyan-400 rounded-full" />
+        </div>
+      </div>
     </section >
   );
 };

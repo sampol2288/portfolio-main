@@ -1,4 +1,4 @@
-# Node.js Backend for Made With Emergentolio
+# Node.js Backend 
 
 ## Installation
 
@@ -36,8 +36,8 @@ The server will be available at `http://localhost:5000`
 
 ## API Endpoints
 
-### Made With Emergentolio Data
-- `GET /api/Made With Emergentolio` - Get all Made With Emergentolio data (personal, skills, projects, education)
+### Portfolio Data
+- `GET /api/data` - Get all data (personal, skills, projects, education)
 
 ### Contact Form
 - `GET /api/contact` - Get all contact submissions

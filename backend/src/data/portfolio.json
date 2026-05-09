@@ -47,16 +47,16 @@
   "projects": [
     {
       "id": 1,
-      "title": "Made With Emergentolio Website",
-      "description": "A modern, responsive Made With Emergentolio built with React and Node.js.",
+      "title": "olio Website",
+      "description": "A modern, responsive olio built with React and Node.js.",
       "tech": [
         "React",
         "Node.js",
         "Express",
         "Tailwind CSS"
       ],
-      "image": "/uploads/Made With Emergentolio.png",
-      "link": "https://github.com/sampol2288/Made With Emergentolio-main"
+      "image": "/uploads/olio.png",
+      "link": "https://github.com/sampol2288/olio-main"
     },
     {
       "id": 2,

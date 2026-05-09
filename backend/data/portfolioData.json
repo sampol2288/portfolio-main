@@ -58,9 +58,9 @@
       "featured": true
     },
     {
-      "id": 2,
-      "name": "SAM Made With Emergentolio",
-      "description": "A creative Made With Emergentolio website showcasing modern web development techniques with interactive elements and smooth user experience.",
+      "id": 2,    
+      "name": "SAM  Portfolio",
+      "description": "A creative  website showcasing modern web development techniques with interactive elements and smooth user experience.",
       "tech": [
         "React.js",
         "JavaScript",
