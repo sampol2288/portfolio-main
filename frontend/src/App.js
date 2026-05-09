@@ -7,6 +7,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import Inquiries from "@/components/Inquiries";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { PortfolioProvider } from "@/context/PortfolioContext";
@@ -22,6 +23,7 @@ function App() {
         <Projects />
         <Education />
         <Contact />
+        <Inquiries />
         <Footer />
         <Toaster />
       </div>

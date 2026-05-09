@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio built with React and Node.js.",
+    "tech": ["React", "Node.js", "Express", "Tailwind CSS"],
+    "image": "/uploads/portfolio.png",
+    "link": "https://github.com/sampol2288/portfolio-main"
+  },
+  {
+    "id": 2,
+    "title": "E-commerce Platform",
+    "description": "Full-featured online store with payment integration.",
+    "tech": ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+    "image": "/uploads/ecommerce.png",
+    "link": "#"
+  }
+]
