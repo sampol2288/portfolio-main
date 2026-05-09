@@ -1,6 +1,6 @@
 const API_BASE_URL = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api');
 
-// Initial data structure (will be populated from API)
+// Initial data structure (populated with default values as fallback)
 export let portfolioData = {
   personal: {
     name: "Smit Polra",
@@ -32,8 +32,32 @@ export let portfolioData = {
       "Reusable Components"
     ]
   },
-  projects: [],
-  education: []
+  projects: [
+    {
+      id: 1,
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio built with React and Node.js.",
+      tech: ["React", "Node.js", "Express", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      link: "https://github.com/sampol2288/portfolio-main"
+    },
+    {
+      id: 2,
+      title: "E-commerce Platform",
+      description: "Full-featured online store with payment integration.",
+      tech: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
+      link: "#"
+    }
+  ],
+  education: [
+    {
+      degree: "Bachelor of Computer Applications (BCA)",
+      institution: "University Name",
+      year: "2023 - 2026",
+      description: "Specializing in software development and web technologies."
+    }
+  ]
 };
 
 // Function to fetch portfolio data from API
