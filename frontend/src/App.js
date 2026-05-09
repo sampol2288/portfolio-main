@@ -10,11 +10,11 @@ import Contact from "@/components/Contact";
 import Inquiries from "@/components/Inquiries";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import { olioProvider } from "@/context/olioContext";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 
 function App() {
   return (
-    <olioProvider>
+    <PortfolioProvider>
       <div className="App">
         <Navbar />
         <Hero />
@@ -27,7 +27,7 @@ function App() {
         <Footer />
         <Toaster />
       </div>
-    </olioProvider >
+    </PortfolioProvider>
   );
 }
 

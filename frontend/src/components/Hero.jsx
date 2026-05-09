@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowRight, Github, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Hero = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -38,13 +38,13 @@ const Hero = () => {
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              {olioData.personal.name}
+              {portfolioData.personal.name}
             </span>
           </h1>
 
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300">
-            {olioData.personal.title}
+            {portfolioData.personal.title}
           </h2>
 
           {/* Tagline */}
@@ -75,7 +75,7 @@ const Hero = () => {
             </Button>
 
             <a
-              href={olioData.personal.github}
+              href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
             >

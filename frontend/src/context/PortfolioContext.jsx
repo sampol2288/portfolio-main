@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { olioData as initialData, fetcholioData } from '../data/mock';
+import { portfolioData as initialData, fetchPortfolioData } from '../data/mock';
 
-const olioContext = createContext();
+const PortfolioContext = createContext();
 
-export const olioProvider = ({ children }) => {
+export const PortfolioProvider = ({ children }) => {
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export const olioProvider = ({ children }) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetcholioData();
+        const result = await fetchPortfolioData();
         setData(result);
       } catch (err) {
         setError(err);
@@ -23,16 +23,16 @@ export const olioProvider = ({ children }) => {
   }, []);
 
   return (
-    <olioContext.Provider value={{ data, loading, error }}>
+    <PortfolioContext.Provider value={{ data, loading, error }}>
       {children}
-    </olioContext.Provider >
+    </PortfolioContext.Provider>
   );
 };
 
-export const useolio = () => {
-  const context = useContext(olioContext);
+export const usePortfolio = () => {
+  const context = useContext(PortfolioContext);
   if (!context) {
-    throw new Error('useolio must be used within a olioProvider');
+    throw new Error('usePortfolio must be used within a PortfolioProvider');
   }
   return context;
 };

@@ -3,10 +3,10 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Projects = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
 
   return (
     <section id="projects" className="py-20 bg-slate-950">
@@ -22,7 +22,7 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {olioData.projects.map((project) => (
+          {portfolioData.projects.map((project) => (
             <Card
               key={project.id}
               className="bg-slate-900 border-slate-800 overflow-hidden hover:border-cyan-400/50 transition-all duration-300 group"
@@ -82,7 +82,7 @@ const Projects = () => {
         <div className="text-center mt-12">
           <p className="text-slate-400 mb-4">View more projects on GitHub</p>
           <a
-            href={olioData.personal.github}
+            href={portfolioData.personal.github}
             target="_blank"
             rel="noopener noreferrer"
           >

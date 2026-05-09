@@ -1,10 +1,10 @@
 import React from 'react';
 import { Code, Layout, GitBranch, Layers, Sparkles, Boxes } from 'lucide-react';
 import { Card } from './ui/card';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Skills = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
 
   const skillIcons = {
     'HTML5': <Code className="w-6 h-6" />,
@@ -34,7 +34,7 @@ const Skills = () => {
             Frontend Technologies
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {olioData.skills.frontend.map((skill) => (
+            {portfolioData.skills.frontend.map((skill) => (
               <Card
                 key={skill.name}
                 className="bg-slate-950 border-slate-800 p-6 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 group"
@@ -70,7 +70,7 @@ const Skills = () => {
             Development Practices
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {olioData.skills.practices.map((practice, index) => (
+            {portfolioData.skills.practices.map((practice, index) => (
               <Card
                 key={index}
                 className="bg-slate-950 border-slate-800 p-4 hover:border-cyan-400/50 transition-all duration-300 hover:translate-x-1 group"

@@ -2,10 +2,10 @@ import React from 'react';
 import { GraduationCap, Calendar, CheckCircle, Clock } from 'lucide-react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Education = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
 
   return (
     <section id="education" className="py-20 bg-slate-900">
@@ -21,7 +21,7 @@ const Education = () => {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6">
-          {olioData.education.map((edu, index) => (
+          {portfolioData.education.map((edu, index) => (
             <Card
               key={edu.id}
               className="bg-slate-950 border-slate-800 p-6 hover:border-cyan-400/50 transition-all duration-300 group"
@@ -65,7 +65,7 @@ const Education = () => {
               </div>
 
               {/* Timeline Connector (except last item) */}
-              {index < olioData.education.length - 1 && (
+              {index < portfolioData.education.length - 1 && (
                 <div className="ml-8 mt-4 border-l-2 border-slate-800 h-6" />
               )}
             </Card>

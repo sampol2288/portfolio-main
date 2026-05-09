@@ -6,10 +6,10 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { submitContactForm } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Contact = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
   const { toast } = useToast();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,20 +64,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: olioData.personal.email,
-      href: `mailto:${olioData.personal.email
+      value: portfolioData.personal.email,
+      href: `mailto:${portfolioData.personal.email
         }`
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: 'Phone',
-      value: olioData.personal.phone,
-      href: `tel: ${olioData.personal.phone}`
+      value: portfolioData.personal.phone,
+      href: `tel: ${portfolioData.personal.phone}`
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
-      value: olioData.personal.address,
+      value: portfolioData.personal.address,
       href: null
     }
   ];

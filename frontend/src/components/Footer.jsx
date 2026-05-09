@@ -1,10 +1,10 @@
 import React from 'react';
 import { Github, Heart, Download } from 'lucide-react';
 import { Button } from './ui/button';
-import { useolio } from '../context/olioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const Footer = () => {
-  const { data: olioData } = useolio();
+  const { data: portfolioData } = usePortfolio();
 
   const currentYear = new Date().getFullYear();
 
@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="text-center">
             <div className="flex items-center justify-center gap-4">
               <a
-                href={olioData.personal.github}
+                href={portfolioData.personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-cyan-400 transition-colors"
@@ -34,7 +34,7 @@ const Footer = () => {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href={`mailto:${olioData.personal.email}`}
+                href={`mailto:${portfolioData.personal.email}`}
                 className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
               >
                 Email Me

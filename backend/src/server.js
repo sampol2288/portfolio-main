@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Olio')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Portfolio')
     .then(() => console.log('Connected to MongoDB successfully'))
     .catch((err) => console.error('Could not connect to MongoDB:', err));   
 
@@ -40,7 +40,7 @@ app.use('/api/inquiries', require('./routes/inquiry'));
 
 app.get('/api', (req, res) => {
     res.json({
-        message: 'Welcome to the olio API',
+        message: 'Welcome to the Portfolio API',
         endpoints: {
             health: '/api/health',
             projects: '/api/projects',
