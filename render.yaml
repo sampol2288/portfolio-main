@@ -10,7 +10,7 @@ services:
       - key: PORT
         value: 10000
       - key: CORS_ORIGINS
-        value: https://smit-polra.onrender.com
+        value: https://smit-polra.onrender.com,https://my-portfolio-tan-seven-73.vercel.app
       - key: DATA_DIR
         value: /opt/render/project/src/backend/data
     disk:
